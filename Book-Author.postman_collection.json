@@ -1,0 +1,210 @@
+{
+	"info": {
+		"_postman_id": "934f35dc-5b43-41a6-8242-621feee709e1",
+		"name": "Book-Author",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add Books",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "user123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n  {\r\n    \"authorList\": [\r\n      {\r\n        \r\n        \"authorName\": \"sneha\"\r\n      }\r\n    ],\r\n    \r\n    \"bookName\": \"orange\"\r\n  },\r\n{\r\n    \"authorList\": [\r\n      {\r\n        \r\n        \"authorName\": \"sanjay\"\r\n      }\r\n    ],\r\n    \r\n    \"bookName\": \"apple\"\r\n  },\r\n{\r\n    \"authorList\": [\r\n      {\r\n        \r\n        \"authorName\": \"navaneeth\"\r\n      },\r\n{\r\n        \r\n        \"authorName\": \"nisa\"\r\n      }\r\n    ],\r\n    \r\n    \"bookName\": \"watermelon\"\r\n  }\r\n\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Book by author or title",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "user123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/books?orderBy=desc&sortBy=bookname",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"books"
+					],
+					"query": [
+						{
+							"key": "orderBy",
+							"value": "desc"
+						},
+						{
+							"key": "sortBy",
+							"value": "bookname"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete book",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/books/7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"books",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patch bookname/authordetails",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"authorList\": [\r\n            {\r\n                \"authorId\": 8,\r\n                \"authorName\": \"newauthor\"\r\n            },\r\n             {\r\n                \"authorId\": 9,\r\n                \"authorName\": \"newauthor22\"\r\n            }\r\n        ]\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/book/7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"book",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Book Details",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "user123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/book/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"book",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
